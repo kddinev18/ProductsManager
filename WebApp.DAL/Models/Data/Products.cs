@@ -31,6 +31,22 @@ namespace WebApp.DAL.Models.Data
             LastUpdated = product.LastUpdated;
         }
 
+        public Product(int id, string name, string description, double price, DateTime createdAt, DateTime lastUpdated)
+        {
+            Id = id;
+            Name = name;
+            Description = description;
+            Price = price;
+            CreatedAt = createdAt;
+            LastUpdated = lastUpdated;
+        }
+
+        public Product()
+        {
+            Name = String.Empty;
+            Description = String.Empty;
+        }
+
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

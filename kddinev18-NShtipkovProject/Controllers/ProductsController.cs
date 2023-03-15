@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Reflection.Emit;
 using WebApp.BLL.Interfaces;
 using WebApp.DTO;
 
@@ -19,47 +20,68 @@ namespace kddinev18_NShtipkovProject.Controllers
         }
 
         [HttpGet]
-        public IActionResult DailedInformation()
+        public IActionResult Details(int id)
         {
-            return View();
+            return View(_productService.GetProductById(id));
         }
 
 
 
         [HttpGet]
-        public IActionResult CreateProduct()
+        public IActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult CreateProduct(ProductRequestDTO product)
+        public IActionResult Create(ProductRequestDTO product)
         {
-            return View();
+            if(_productService.CreateProduct(product))
+            {
+                return Index();
+            }
+            else
+            {
+                return null;
+            }
         }
 
 
 
 
         [HttpGet]
-        public IActionResult EditProduct()
+        public IActionResult Edit()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult EditProduct(ProductRequestDTO product)
+        public IActionResult Edit(ProductRequestDTO product)
         {
-            return View();
+            if (_productService.EditProduct(product))
+            {
+                return View();
+            }
+            else
+            {
+                return null;
+            }
         }
 
 
 
 
         [HttpPost]
-        public IActionResult DeleteProduct(ProductRequestDTO product)
+        public IActionResult Delete(ProductRequestDTO product)
         {
-            return View();
+            if (_productService.DeleteProduct(product))
+            {
+                return View();
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

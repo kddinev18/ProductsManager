@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "kddinev18-NShtipkovProject\WebApp.csproj", "{28AE9D78-80B5-4125-A4EA-7B7ACE4A988B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "kddinev18-NShtipkovProject\WebApp.csproj", "{28AE9D78-80B5-4125-A4EA-7B7ACE4A988B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.DAL", "WebApp.DAL\WebApp.DAL.csproj", "{CD4287A2-7FC0-4833-8AAD-B0FB112B4270}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp.DAL", "WebApp.DAL\WebApp.DAL.csproj", "{CD4287A2-7FC0-4833-8AAD-B0FB112B4270}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.DTO", "WebApp.DTO\WebApp.DTO.csproj", "{8B34CAF6-1B73-4B01-8B01-2655413A419E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp.DTO", "WebApp.DTO\WebApp.DTO.csproj", "{8B34CAF6-1B73-4B01-8B01-2655413A419E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.BLL", "WebApp.BLL\WebApp.BLL.csproj", "{15C3B31E-664A-4564-90C4-7E0BD1E9ED00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{8B34CAF6-1B73-4B01-8B01-2655413A419E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B34CAF6-1B73-4B01-8B01-2655413A419E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B34CAF6-1B73-4B01-8B01-2655413A419E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15C3B31E-664A-4564-90C4-7E0BD1E9ED00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15C3B31E-664A-4564-90C4-7E0BD1E9ED00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15C3B31E-664A-4564-90C4-7E0BD1E9ED00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15C3B31E-664A-4564-90C4-7E0BD1E9ED00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

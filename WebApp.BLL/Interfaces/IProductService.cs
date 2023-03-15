@@ -9,6 +9,11 @@ namespace WebApp.BLL.Interfaces
 {
     public interface IProductService
     {
-        public ProductRequestDTO
+        public bool CreateProduct(ProductRequestDTO product);
+        public ProductResponseDTO GetProductById(int id);
+        public ICollection<ProductResponseDTO> GetProducts(int pagingSize, int skipAmount);
+        public bool EditProduct(ProductRequestDTO product);
+        public bool DeleteProduct(int id);
+        public bool DeleteProduct(ProductRequestDTO product);
     }
 }

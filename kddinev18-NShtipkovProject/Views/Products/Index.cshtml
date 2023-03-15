@@ -1,5 +1,30 @@
-﻿@using WebApp.DTO;
-@{
-    ViewData["Title"] = "Index";
-    Model = ProductResponseDTO;
-}
+﻿@using System.Reflection;
+@using WebApp.DTO;
+@model List<ProductResponseDTO>;
+@{ViewData["Title"]="Index";}
+
+<table class="table">
+    <thead>
+        <tr>
+            @foreach (PropertyInfo property in typeof(ProductResponseDTO).GetProperties())
+            {
+                <th scope="col">@property.Name</th>
+            }
+            <th scope="col">Details</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ProductResponseDTO product in Model)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td><a asp-controller="Products" asp-action="Details" asp-route-id="@product.Id">Details</a>
+            </td>
+            </tr>
+        }
+    </tbody>
+</table>

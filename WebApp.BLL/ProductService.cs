@@ -11,7 +11,7 @@ namespace WebApp.BLL
         private IProductRepository _productRepository;
         public ProductService(IProductRepository productRepository)
         {
-            _productRepository = new ProductRepository();
+            _productRepository = productRepository;
         }
         public bool CreateProduct(ProductRequestDTO product)
         { 

@@ -11,7 +11,7 @@ namespace WebApp.DAL.Repositories.Interfaces
     public interface IProductRepository
     {
         public bool CreateProduct(Product product);
-        public Product GetById(int id);
+        public Product GetProductById(int id);
         public IEnumerable<Product> GetProducts(int pagingSize, int skipAmount);
         public bool EditProduct(Product product);
         public bool DeleteProduct(int id);
