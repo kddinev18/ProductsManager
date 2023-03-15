@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "kddinev18-NShtipk
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.DAL", "WebApp.DAL\WebApp.DAL.csproj", "{CD4287A2-7FC0-4833-8AAD-B0FB112B4270}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.DTO", "WebApp.DTO\WebApp.DTO.csproj", "{8B34CAF6-1B73-4B01-8B01-2655413A419E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{CD4287A2-7FC0-4833-8AAD-B0FB112B4270}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD4287A2-7FC0-4833-8AAD-B0FB112B4270}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD4287A2-7FC0-4833-8AAD-B0FB112B4270}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B34CAF6-1B73-4B01-8B01-2655413A419E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B34CAF6-1B73-4B01-8B01-2655413A419E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B34CAF6-1B73-4B01-8B01-2655413A419E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B34CAF6-1B73-4B01-8B01-2655413A419E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

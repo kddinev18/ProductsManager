@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace WebApp.DTO
 {
-    internal class ProductRequestDTO
+    public class ProductRequestDTO
     {
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public double Price { get; set; }
     }
 }

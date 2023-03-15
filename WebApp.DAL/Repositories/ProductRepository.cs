@@ -16,11 +16,11 @@ namespace WebApp.DAL.Repositories
         {
             _context = context;
         }
-        public bool CreateProduct(ProductRequestDTO product)
+        public bool CreateProduct(Product product)
         {
             try
             {
-                _context.Products.Add(new Product(product));
+                _context.Products.Add(product);
                 _context.SaveChanges();
             }
             catch (Exception)
@@ -32,27 +32,62 @@ namespace WebApp.DAL.Repositories
 
         public bool DeleteProduct(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _context.Products.Remove(_context.Products.Where(product => product.Id == id).First());
+                _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
         }
 
-        public bool DeleteProduct(ProductRequestDTO product)
+        public bool DeleteProduct(Product productToRemove)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _context.Products.Remove(_context.Products.Where(product => product.Id == productToRemove.Id).First());
+                _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
         }
 
-        public bool EditProduct(ProductRequestDTO product)
+        public bool EditProduct(Product productToEdit)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Product product = _context.Products
+                    .Where(product => product.Id == productToEdit.Id)
+                    .First();
+
+                product.Name = productToEdit.Name;
+                product.Price = productToEdit.Price;
+                product.Description = productToEdit.Description;
+
+                _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
         }
 
-        public ProductResponseDTO GetById(int Id)
+        public Product GetById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Products.Where(product => product.Id == id).First();
         }
 
-        public List<ProductResponseDTO> GetProducts(int pagingSize, int skipAmount)
+        public IEnumerable<Product> GetProducts(int pagingSize, int skipAmount)
         {
-            throw new NotImplementedException();
+            return _context.Products.Skip(skipAmount).Take(pagingSize);
         }
     }
 }
