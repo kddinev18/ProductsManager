@@ -12,9 +12,9 @@ namespace WebApp.DAL.Repositories
     public class ProductRepository : IProductRepository
     {
         private ProductManagerDbContext _context;
-        public ProductRepository(ProductManagerDbContext context)
+        public ProductRepository()
         {
-            _context = context;
+            _context = new ProductManagerDbContext();
         }
         public bool CreateProduct(Product product)
         {
@@ -80,7 +80,7 @@ namespace WebApp.DAL.Repositories
             return true;
         }
 
-        public Product GetById(int id)
+        public Product GetProductById(int id)
         {
             return _context.Products.Where(product => product.Id == id).First();
         }

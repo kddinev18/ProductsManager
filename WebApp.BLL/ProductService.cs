@@ -1,5 +1,6 @@
 ﻿using WebApp.BLL.Interfaces;
 using WebApp.DAL.Models.Data;
+using WebApp.DAL.Repositories;
 using WebApp.DAL.Repositories.Interfaces;
 using WebApp.DTO;
 
@@ -10,7 +11,7 @@ namespace WebApp.BLL
         private IProductRepository _productRepository;
         public ProductService(IProductRepository productRepository)
         {
-            _productRepository = productRepository;
+            _productRepository = new ProductRepository();
         }
         public bool CreateProduct(ProductRequestDTO product)
         { 
