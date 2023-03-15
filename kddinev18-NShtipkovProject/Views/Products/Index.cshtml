@@ -3,13 +3,14 @@
 @model List<ProductResponseDTO>;
 @{ViewData["Title"]="Index";}
 
+
+
 <table class="table">
     <thead>
         <tr>
-            @foreach (PropertyInfo property in typeof(ProductResponseDTO).GetProperties())
-            {
-                <th scope="col">@property.Name</th>
-            }
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
             <th scope="col">Details</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
@@ -23,6 +24,8 @@
                 <td>@product.Name</td>
                 <td>@product.Price</td>
                 <td><a asp-controller="Products" asp-action="Details" asp-route-id="@product.Id">Details</a>
+                <td><a asp-controller="Products" asp-action="Edit" asp-route-id="@product.Id">Edit</a>
+                <td><a asp-controller="Products" asp-action="Delete" asp-route-id="@product.Id">Delete</a>
             </td>
             </tr>
         }
