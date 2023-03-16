@@ -1,6 +1,7 @@
 ﻿@using WebApp.DTO;
 @model ProductRequestDTO
-<form asp-controller="Products" asp-action="Create" method="post">
+
+<form asp-controller="Products" asp-action="Edit" method="post">
     <div class="form-group">
         <label asp-for="Name">Name</label>
         <input asp-for="Name" class="form-control" />
@@ -27,5 +28,6 @@
             </ul>
         </div>
     }
-    <input type="submit" class="btn btn-primary btn-lg" value="Add product" />
+    <input type="submit" class="btn btn-primary btn-lg" value="Edit Product" />
 </form>
+

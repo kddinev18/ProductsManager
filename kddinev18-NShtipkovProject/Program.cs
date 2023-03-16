@@ -1,6 +1,5 @@
 using WebApp.BLL;
 using WebApp.BLL.Interfaces;
-using WebApp.DAL;
 using WebApp.DAL.Repositories;
 using WebApp.DAL.Repositories.Interfaces;
 

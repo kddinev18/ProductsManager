@@ -10,10 +10,10 @@ namespace WebApp.DAL.Repositories.Interfaces
 {
     public interface IProductRepository
     {
-        public bool CreateProduct(Product product);
+        public bool CreateProduct(Product product, ref string errorMessage);
         public Product GetProductById(int id);
         public IEnumerable<Product> GetProducts(int pagingSize, int skipAmount);
-        public bool EditProduct(Product product);
+        public bool EditProduct(Product product , ref string errorMessage);
         public bool DeleteProduct(int id);
         public bool DeleteProduct(Product product);
     }

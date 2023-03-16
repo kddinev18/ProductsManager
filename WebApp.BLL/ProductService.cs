@@ -13,9 +13,9 @@ namespace WebApp.BLL
         {
             _productRepository = productRepository;
         }
-        public bool CreateProduct(ProductRequestDTO product)
+        public bool CreateProduct(ProductRequestDTO product, ref string errorMessage)
         { 
-            return _productRepository.CreateProduct(new Product(product));
+            return _productRepository.CreateProduct(new Product(product), ref errorMessage);
         }
 
         public bool DeleteProduct(int id)
@@ -28,9 +28,9 @@ namespace WebApp.BLL
             return _productRepository.DeleteProduct(new Product(product));
         }
 
-        public bool EditProduct(ProductRequestDTO product)
+        public bool EditProduct(ProductRequestDTO product, ref string errorMessage)
         {
-            return _productRepository.EditProduct(new Product(product));
+            return _productRepository.EditProduct(new Product(product), ref errorMessage);
         }
 
         public ProductResponseDTO GetProductById(int id)

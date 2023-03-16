@@ -16,15 +16,19 @@ namespace WebApp.DAL.Repositories
         {
             _context = new ProductManagerDbContext();
         }
-        public bool CreateProduct(Product product)
+        public bool CreateProduct(Product product, ref string errorMessage)
         {
             try
             {
                 _context.Products.Add(product);
                 _context.SaveChanges();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                if (ex.InnerException.Message.Contains("unique"))
+                    errorMessage = "Can't have products with the same name";
+                else 
+                    errorMessage = "Server error";
                 return false;
             }
             return true;
@@ -58,7 +62,7 @@ namespace WebApp.DAL.Repositories
             return true;
         }
 
-        public bool EditProduct(Product productToEdit)
+        public bool EditProduct(Product productToEdit, ref string errorMessage)
         {
             try
             {
@@ -72,8 +76,14 @@ namespace WebApp.DAL.Repositories
 
                 _context.SaveChanges();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                if (ex.Message.Contains("UniqueConstraint"))
+                    errorMessage = "Can't have products with the same name";
+                else
+                    errorMessage = "Server error";
+                return false;
+
                 return false;
             }
 

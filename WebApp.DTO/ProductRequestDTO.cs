@@ -9,6 +9,17 @@ namespace WebApp.DTO
 {
     public class ProductRequestDTO
     {
+        public ProductRequestDTO(ProductResponseDTO product)
+        {
+            Id = product.Id;
+            Name = product.Name;
+            Description = product.Description;
+            Price = product.Price;
+        }
+        public ProductRequestDTO()
+        {
+            
+        }
         public int? Id { get; set; }
 
         [Required(ErrorMessage = "Please enter your name.")]

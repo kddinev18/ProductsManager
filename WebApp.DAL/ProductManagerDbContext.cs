@@ -27,6 +27,7 @@ namespace WebApp.DAL
             modelBuilder.Entity<Product>(entity =>
             {
                 entity.HasIndex(e => e.Id);
+                entity.HasIndex(e => e.Name).IsUnique();
 
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime2(7)");
                 entity.Property(e => e.LastUpdated).HasColumnType("datetime2(7)");

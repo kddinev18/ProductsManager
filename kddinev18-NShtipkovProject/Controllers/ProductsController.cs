@@ -36,36 +36,37 @@ namespace kddinev18_NShtipkovProject.Controllers
         [HttpPost]
         public IActionResult Create(ProductRequestDTO product)
         {
-            if(_productService.CreateProduct(product))
+            string errorMesage = "";
+            if(!_productService.CreateProduct(product, ref errorMesage))
             {
-                return Index();
+                ModelState.AddModelError(string.Empty, errorMesage);
             }
-            else
-            {
-                return null;
-            }
+            return Create();
         }
 
 
 
 
         [HttpGet]
-        public IActionResult Edit()
+        public IActionResult Edit(int id)
         {
-            return View();
+            ProductResponseDTO product = _productService.GetProductById(id);
+            if(product is null)  
+                return RedirectToAction("Error", "Index"); 
+
+            return View(new ProductRequestDTO(product));
         }
 
         [HttpPost]
         public IActionResult Edit(ProductRequestDTO product)
         {
-            if (_productService.EditProduct(product))
+            string errorMesage = "";
+            if (!_productService.EditProduct(product, ref errorMesage))
             {
-                return View();
+                ModelState.AddModelError(string.Empty, errorMesage);
+                return Edit(product.Id.Value);
             }
-            else
-            {
-                return null;
-            }
+            return Index();
         }
 
 
@@ -76,11 +77,11 @@ namespace kddinev18_NShtipkovProject.Controllers
         {
             if (_productService.DeleteProduct(product))
             {
-                return View();
+                return Index();
             }
             else
             {
-                return null;
+                return NotFound();
             }
         }
     }
