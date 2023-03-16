@@ -14,5 +14,8 @@ namespace WebApp.DTO
         public double Price { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime LastUpdated { get; set; }
+
+        public int PageIndex { get; set; } = 1;
+        public int PageCount { get; set; }
     }
 }

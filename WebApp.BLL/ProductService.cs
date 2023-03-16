@@ -33,6 +33,11 @@ namespace WebApp.BLL
             return _productRepository.EditProduct(new Product(product), ref errorMessage);
         }
 
+        public int GetCount()
+        {
+            return _productRepository.GetCount();
+        }
+
         public ProductResponseDTO GetProductById(int id)
         {
             Product product = _productRepository.GetProductById(id);

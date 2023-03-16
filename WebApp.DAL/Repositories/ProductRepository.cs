@@ -82,12 +82,16 @@ namespace WebApp.DAL.Repositories
                     errorMessage = "Can't have products with the same name";
                 else
                     errorMessage = "Server error";
-                return false;
 
                 return false;
             }
 
             return true;
+        }
+
+        public int GetCount()
+        {
+            return _context.Products.Count();
         }
 
         public Product GetProductById(int id)
