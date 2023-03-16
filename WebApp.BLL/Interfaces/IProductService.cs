@@ -15,6 +15,6 @@ namespace WebApp.BLL.Interfaces
         public bool EditProduct(ProductRequestDTO product, ref string errorMessage);
         public bool DeleteProduct(int id);
         public bool DeleteProduct(ProductRequestDTO product);
-        public int GetCount();
+        public Task<int> GetCountAsync();
     }
 }

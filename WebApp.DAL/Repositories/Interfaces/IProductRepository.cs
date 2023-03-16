@@ -10,6 +10,7 @@ namespace WebApp.DAL.Repositories.Interfaces
 {
     public interface IProductRepository
     {
+        public Task<int> GetCountAsync();
         public bool CreateProduct(Product product, ref string errorMessage);
         public Product GetProductById(int id);
         public IEnumerable<Product> GetProducts(int pagingSize, int skipAmount);

@@ -33,9 +33,9 @@ namespace WebApp.BLL
             return _productRepository.EditProduct(new Product(product), ref errorMessage);
         }
 
-        public int GetCount()
+        public async Task<int> GetCountAsync()
         {
-            return _productRepository.GetCount();
+            return await _productRepository.GetCountAsync();
         }
 
         public ProductResponseDTO GetProductById(int id)

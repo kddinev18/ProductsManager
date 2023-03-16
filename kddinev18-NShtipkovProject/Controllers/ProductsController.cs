@@ -16,12 +16,12 @@ namespace kddinev18_NShtipkovProject.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index(int pageNumber = 1, int pageSize = 10)
+        public async Task<IActionResult> Index(int pageNumber = 1, int pageSize = 10)
         {
             TempData["PageNumber"] = pageNumber; 
-            TempData["TotalPages"] = (int)Math.Ceiling((double)_productService.GetCount() / pageSize);
+            TempData["TotalPages"] = (int)Math.Ceiling( (double)await _productService.GetCountAsync() / pageSize);
 
-            return View(_productService.GetProducts(pageNumber, (pageNumber - 1) * pageSize));
+            return View(_productService.GetProducts(pageSize, (pageNumber - 1) * pageSize));
         }
 
         [HttpGet]

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -89,9 +90,9 @@ namespace WebApp.DAL.Repositories
             return true;
         }
 
-        public int GetCount()
+        public async Task<int> GetCountAsync()
         {
-            return _context.Products.Count();
+            return await _context.Products.CountAsync();
         }
 
         public Product GetProductById(int id)
