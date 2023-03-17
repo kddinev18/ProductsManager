@@ -8,7 +8,7 @@ using WebApp.DAL.Models.Data;
 
 namespace WebApp.DAL
 {
-    public partial class ProductManagerDbContext : DbContext
+    public partial class ProductManagerDbContext : DbContext, IProductManagerDbContex
     {
         public ProductManagerDbContext() { }
         public ProductManagerDbContext(DbContextOptions<ProductManagerDbContext> options) : base(options) { }
